@@ -6,7 +6,7 @@
         {{-- <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div> --}}
-        <div class="sidebar-brand-text mx-3">Rental Motor</div>
+        <div class="sidebar-brand-text mx-3">REKAM MEDIS</div>
     </a>
 
     <!-- Divider -->
@@ -25,12 +25,12 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <!-- collapsed -->
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+        <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Menejemen Data</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <span>Manajemen Data</span>
+        </a> -->
+        <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner roun ded">
                 <h6 class="collapse-header">Menejemen Data</h6>
                 <a class="collapse-item {{ set_active(['penyewa.index','penyewa.edit']) }}"
@@ -42,18 +42,18 @@
                     href="{{ route('user.index') }}">Data Akun User</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item {{ set_active(['penyewaan.index','penyewaan.edit','penyewaan.show']) }}">
+    <!-- <li class="nav-item {{ set_active(['penyewaan.index','penyewaan.edit','penyewaan.show']) }}">
         <a class="nav-link" href="{{ route('penyewaan.index') }}">
             <i class="fas fa-fw fa-exchange-alt"></i>
             <span>Penyewaan</span></a>
-    </li>
+    </li> -->
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item {{ set_active(['pengembalian.index','pengembalian.edit','pengembalian.show']) }}">
+    <!-- <li class="nav-item {{ set_active(['pengembalian.index','pengembalian.edit','pengembalian.show']) }}">
         <a class="nav-link" href="{{ route('pengembalian.index') }}">
             <i class="fas fa-fw fa-exchange-alt"></i>
             <span>Pengembalian</span></a>
@@ -62,7 +62,15 @@
         <a class="nav-link" href="{{ route('pembayaran.index') }}">
             <i class="fas fa-fw fa-dollar-sign"></i>
             <span>Pembayaran</span></a>
+    </li> -->
+    <li class="nav-item {{ set_active(['rekammedis.index']) }}">
+    <a class="nav-link" href="{{ route('rekammedis.index') }}">
+        <i class="fas fa-fw fa-file-alt"></i>
+        <span>Rekam Medis</span>
+    </a>
     </li>
+
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

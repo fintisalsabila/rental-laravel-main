@@ -31,7 +31,7 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email'],
             // 'password' => ['required', 'string','min:8' ]  
-            'password' => ['required', 'string','min:8','max:10','regex:/[a-z]/','regex:/[A-Z]/' ]  
+            'password' => ['required', 'string','regex:/[a-z]/','regex:/[A-Z]/' ]  
         ];
     }
 

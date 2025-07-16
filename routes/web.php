@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MotorController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PenyewaanController;
 use App\Http\Controllers\PenyewaController;
@@ -43,5 +44,7 @@ Route::resource('penyewaan', PenyewaanController::class)->middleware('auth');
 Route::resource('pengembalian', PengembalianController::class)->middleware('auth');
 
 Route::get('pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index')->middleware('auth');
+// Route::get('rekammedis', [RekamMedisController::class, 'index'])->name('rekammedis.index')->middleware('auth');
+Route::resource('rekammedis', RekamMedisController::class)->middleware('auth');
 
 require __DIR__ . '/auth.php';
