@@ -1,15 +1,10 @@
 <?php
 
-use App\Http\Controllers\MotorController;
-use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\RekamMedisController;
-use App\Http\Controllers\PengembalianController;
-use App\Http\Controllers\PenyewaanController;
-use App\Http\Controllers\PenyewaController;
 use App\Http\Controllers\UserController;
-use App\Models\Motor;
-use App\Models\Penyewa;
-use App\Models\Sewa;
+use App\Models\Pelanggan;
+// use App\Models\Kendaraan;
+use App\Models\RekamMedis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,22 +23,20 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    $penyewa = Penyewa::all()->count();
-    $motor   = Motor::all()->count();
-    $sewa   = Sewa::where('status', 0)->count();
-    $kembali   = Sewa::where('status', 1)->count();
-    $total_transaksi   = Sewa::all()->count();
-    $total_pendapatan   = Sewa::all()->sum('total_biaya') + Sewa::all()->sum('denda');
-    return view('pages.dashboard' ,compact('penyewa','motor','sewa','kembali','total_transaksi','total_pendapatan'));
+    $total_pelanggan = Pelanggan::count();
+    $total_rekam_medis = RekamMedis::count();
+    $total_servis_selesai = RekamMedis::where('status_servis', 'Selesai')->count();
+
+    return view('pages.dashboard', compact(
+        'total_pelanggan',
+        'total_rekam_medis',
+        'total_servis_selesai',
+    ));
 })->middleware('auth')->name('dashboard');
 
 Route::resource('user', UserController::class)->middleware('auth');
-Route::resource('penyewa', PenyewaController::class)->middleware('auth');
-Route::resource('motor', MotorController::class)->middleware('auth');
-Route::resource('penyewaan', PenyewaanController::class)->middleware('auth');
-Route::resource('pengembalian', PengembalianController::class)->middleware('auth');
+Route::resource('pelanggan', PelangganController::class)->middleware('auth');
 
-Route::get('pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index')->middleware('auth');
 // Route::get('rekammedis', [RekamMedisController::class, 'index'])->name('rekammedis.index')->middleware('auth');
 Route::resource('rekammedis', RekamMedisController::class)->middleware('auth');
 

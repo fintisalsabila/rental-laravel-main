@@ -1,26 +1,22 @@
 @extends('layouts.dashboard')
 @section('content')
 
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
     </div>
 
-    <!-- Content Row -->
     <div class="row">
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Total Pelanggan -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Penyewa (Customer)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $penyewa }}</div>
+                                Total Pelanggan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_pelanggan }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -29,82 +25,63 @@
                 </div>
             </div>
         </div>
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Motor</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $motor }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-motorcycle fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Pending Requests Card Example -->
+        <!-- Total Rekam Medis -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Masa Sewa</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sewa }}</div>
+                                Total Rekam Medis</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_rekam_medis }}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-exchange-alt fa-2x text-gray-300"></i>
+                            <i class="fas fa-file-medical fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Servis Selesai -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Total Transaksi</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$total_transaksi }}</div>
+                                Servis Selesai</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_servis_selesai }}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Pendapatan-->
+        <!-- @isset($total_pendapatan)
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-left-dark shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
                                 Total Pendapatan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. {{$total_pendapatan }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. {{ number_format($total_pendapatan, 0, ',', '.') }}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> -->
+        @endisset
 
     </div>
-
-
 </div>
-<!-- /.container-fluid -->
 @endsection
